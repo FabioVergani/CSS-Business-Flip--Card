@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS-Business-Card</title>
+	<meta name="author" content="Fabio Vergani">
+	<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+.card{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;}
+.card ::selection{background:transparent}
+
+.card >.flip3d{
+position:relative;
+perspective:1000;
+-o-perspective:1000;
+-ms-perspective:1000;
+-moz-perspective:1000;
+-webkit-perspective:1000;
+transform-style:preserve-3d;
+-o-transform-style:preserve-3d;
+-ms-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+}
+
+.card,
+.card >.flip3d,
+.card >.flip3d >.face,
+.card >.flip3d >.face >i{box-sizing:border-box;display:block;margin:0;padding:0;cursor:default;font-style:normal;font-family:inherit;text-decoration:none;}
+
+.card >.flip3d,
+.card >.flip3d >.face{height:100%;width:100%;}
+
+.card >.flip3d >.face{
+transition:.6s ease;
+-o-transition:.6s ease;
+-ms-transition:.6s ease;
+-moz-transition:.6s ease;
+-webkit-transition:.6s ease;
+backface-visibility:hidden;
+-o-backface-visibility:hidden;
+-ms-backface-visibility:hidden;
+-moz-backface-visibility:hidden;
+-webkit-backface-visibility:hidden;
+transform-style:preserve-3d;
+-o-transform-style:preserve-3d;
+-ms-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+position:absolute;top:0;right:auto;bottom:auto;left:0;
+}
+
+.card >.flip3d >.face.front,
+.card:active >.flip3d >.face.back{
+transform:rotateY(0deg);
+-o-transform:rotateY(0deg);
+-ms-transform:rotateY(0deg);
+-moz-transform:rotateY(0deg);
+-webkit-transform:rotateY(0deg);
+z-index:2;
+}
+
+.card >.flip3d >.face.back{
+transform:rotateY(-180deg);
+-o-transform:rotateY(-180deg);
+-ms-transform:rotateY(-180deg);
+-moz-transform:rotateY(-180deg);
+-webkit-transform:rotateY(-180deg);
+text-align:center;
+}
+
+.card:active >.flip3d >.face.front{
+transform:rotateY(180deg);
+-o-transform:rotateY(180deg);
+-ms-transform:rotateY(180deg);
+-moz-transform:rotateY(180deg);
+-webkit-transform:rotateY(180deg);
+}
+
+
+.card >.flip3d >.face >i{font-weight:400;font-size:1rem;line-height:1.4rem;}
+
+.card >.flip3d >.face.front{padding:0 2rem 0 0;text-align:right;}
+.card >.flip3d >.face.front >i.name{margin:2rem 0 .6rem 0;font-weight:700;font-size: 1.5rem;}
+.card >.flip3d >.face.front >i.name >img{vertical-align:-.8rem;margin:0 0 0 .2rem;width:46px;height:46px;border:2px solid #e6e6e6;border-radius: 2px;}
+
+.card >.flip3d >.face.front >i.mail{font-size:.8rem;position:absolute;bottom:1.2rem;right:2rem;}
+
+#business-card{height:320px;width:480px;font-family:'Open Sans', sans-serif}
+#business-card .face{box-shadow:5px 5px 3px #888888;}
+#business-card .face.front{background-color:#1B215A;color:#E6E6E6;}
+#business-card .face.back{background-color:#F0F0F0;color:#1B215A;}
+
+#business-card .face.front >i em{display:inline-block;height:1.36em;font-weight:600;border-bottom:2px solid #2C3572;}
+
+#business-card .face.front >i em,
+#business-card .face.front >i:nth-child(1){color:#F0F0F0;}
+
+	</style>
+</head>
+<body>
+
+
+	<div id="business-card" class="card">
+		<p class="flip3d">
+			<a class="face front">
+				<i class="name">Vergani Fabio<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/p50x50/1958422_10204081854996199_2608137113132864121_n.jpg?oh=7ba242e488c3bdde9b95435b3b780404&amp;oe=562F68F9&amp;__gda__=1442080966_405a6f9b6fa35e5df950872289bbb47d" alt=""></i>
+				<i class="skill">UI/UX Designer, Mobile Front-End Developer</i>
+				<i class="location">Milan, Italy</i>
+				<i class="social">facebook.com/<em>verganifabio</em></i>
+				<i class="mail">verganifabio@facebook.com</i>
+			</a>
+			<a class="face back">
+				<img style="margin-top:9px" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11058742_1596079853982267_1017875452832647271_n.png?oh=1dbdb61c7abf70a0a2eaa5c0eb4b9887&oe=55EB1783">
+			</a>
+		</p>
+	</div>
+
+</body>
+</html>
